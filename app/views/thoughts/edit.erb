@@ -1,0 +1,16 @@
+<h1> EDIT THIS </h1>
+
+<h2> <%= @thought.subject %> </h2>
+
+<form method="POST" action="/thoughts/<%= @thought.id %>">
+
+    <input type="hidden" name="_method" value="patch">
+
+    <p> Subject: <input type="text" name="subject"></p>
+    <p> Details: <input type="text" name="details"></p>
+
+    <p> Sentiments: <input type="text" name="sentiment"></p>
+
+    <input type="submit">
+
+</form>

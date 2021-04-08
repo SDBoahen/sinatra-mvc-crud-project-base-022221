@@ -1,0 +1,12 @@
+<h1><%= @thought.subject %></h1>
+
+
+    <h3><%= @thought.subject %></h3>
+    <h3><%= @thought.details %></h3>
+    <h3><%= @thought.sentiment %></h3>
+    <h3><%= @thought.intrusive %></h3>
+    <h3><%= @thought.logical %></h3>
+
+    <br><br>
+    
+    <a href="/thoughts/<%= @thought.id %>/edit" > EDIT </a>

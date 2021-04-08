@@ -15,7 +15,7 @@ end
 25.times do
 
     Thought.create(
-        subject: "NICE✨",
+        subject: Faker::Game.title,
         details: "",
         sentiment: "",
         intrusive: options.sample,

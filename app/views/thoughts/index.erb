@@ -1,0 +1,19 @@
+<h1> All Our Thoughts Are Here! Yaaay!😅🎉(👀😰) </h1>
+
+
+<br><br>
+
+
+<ul>
+
+    <% @thoughts.each do |thought| %>
+
+        <li>
+            <a href="/thoughts/<%= thought.id %>" >
+                <%= thought.subject %>
+            </a>
+        </li>
+
+    <% end %>
+
+</ul>

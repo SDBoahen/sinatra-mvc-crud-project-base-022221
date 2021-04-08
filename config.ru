@@ -7,6 +7,10 @@ end
 
 
 run ApplicationController
+Rack::MethodOverride
+  #  !!  PATCH-REQUESTS  !!
+    #  HTML Limitations
+    #  **  Do something other than GET + POST
 
 use UsersController
 use ThoughtsController
