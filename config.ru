@@ -7,7 +7,8 @@ end
 
 
 run ApplicationController
-Rack::MethodOverride
+
+use Rack::MethodOverride
   #  !!  PATCH-REQUESTS  !!
     #  HTML Limitations
     #  **  Do something other than GET + POST

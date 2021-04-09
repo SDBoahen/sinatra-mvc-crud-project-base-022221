@@ -11,11 +11,11 @@ class ThoughtsController < ApplicationController
         erb :"thoughts/new" 
     end
 
-
     get "/thoughts/:id" do
         @thought = Thought.find_by_id(params[:id])
         erb :"thoughts/show"
     end
+    
 
 
     post "/thoughts" do
@@ -32,18 +32,21 @@ class ThoughtsController < ApplicationController
 
 
     get "/thoughts/:id/edit" do
+        # binding.pry
         @thought = Thought.find_by_id(params[:id])
 
         erb :"thoughts/edit"
 
     end
     patch "/thoughts/:id" do
-        thought = Thought.find_by_id(params[:id])
+        # binding.pry
 
-        thought.update(params)
-        
-        if thought.update
-            redirect "thoughts/#{thought.id}"
+        @thought = Thought.find_by_id(params[:id])
+            params.delete("_method")
+        @thought.update(params)
+     
+        if @thought.update(params) #Did We Make a Change?
+            redirect "/thoughts/#{@thought.id}"
         else
             redirect "thoughts/new"
         end
@@ -54,7 +57,9 @@ class ThoughtsController < ApplicationController
 
 
     delete "/thoughts/:id" do
-        
+        @thought = Thought.find_by_id(params[:id])
+        @thought.destroy
+        redirect "/thoughts"
     end
 
 
